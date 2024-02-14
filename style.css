@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inconsolata:wght@200..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: skyblue;
+}
+
+.fixed-wrapper {
+    height: 100vh;
+    width: 400px;
+    background-color: navy;
+    border-right: 5px solid white;
+    position: fixed;
+}
+
+.fixed-container {
+    width: 100%;
+    height: 100%;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.heading {
+    border: 2px solid white;
+    border-radius: 30px;
+}
+
+.heading > h1 {
+    padding: 10px;
+}
+
+.responsive {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button, input[type="submit"] {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: white;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.add-book > form > div {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-book > form > div > label {
+    display: block;
+    width: 100px;
+
+}
+
+.add-book > form > .submit-form {
+    justify-content: flex-end;
+}
+
+.main-wrapper {
+    margin-left: 405px;
+    padding: 10px;
+}
+
+.main-container > div {
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, 10vw);
+    grid-template-rows: 50px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.main-container > div > * {
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .fixed-wrapper {
+        position: relative;
+        width: auto;
+        height: 75vh;
+    }
+
+    .responsive {
+        flex-direction: row;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+
+    .main-wrapper {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .responsive {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 0.75rem;
+    }
+
+    p {
+        font-size: 0.5rem;
+    }
+}
