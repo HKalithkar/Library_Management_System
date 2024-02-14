@@ -87,8 +87,7 @@ input {
 
 .main-container > div {
     margin-bottom: 10px;
-    border: 2px solid black;
-    border-radius: 30px;
+    border-bottom: 2px solid black;
     display: grid;
     grid-template-columns: repeat(5, 10vw);
     grid-template-rows: 50px;
