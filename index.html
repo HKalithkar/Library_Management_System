@@ -17,34 +17,36 @@
                     <button>View all books</button>
                 </div>
                 <div class="search">
-                    <input type="text" name="search-box" id="search-box" placeholder="Book Title">
-                    <button class="submit">Search</button>
+                    <form action="search-book">
+                        <input type="text" name="search-box" id="search-box" placeholder="Book Title" required>
+                        <input type="submit" value="Search">
+                    </form>
                 </div>
             </div>
             <div class="add-book">
                 <form action="add-book">
-                    <div class="title-name">
+                    <div class="add">
                         <label for="title">Title</label>
                         <input type="text" name="add-book" id="title" required>
                     </div>
 
-                    <div class="author-name">
+                    <div class="add">
                         <label for="author">Author</label>
                         <input type="text" name="add-book" id="author" required>
                     </div>
 
-                    <div class="total-pages">
+                    <div class="add">
                         <label for="pages">Pages</label>
                         <input type="number" name="add-book" id="pages" required>
                     </div>
 
-                    <div class="genre-type">
+                    <div class="add">
                         <label for="genre">Genre</label>
-                        <input type="text" name="add-book" id="genre">
+                        <input type="text" name="add-book" id="genre" required>
                     </div>
 
                     <div class="submit-form">
-                        <button>Add Book</button>
+                        <input type="submit" value="Add Book">
                     </div>
                 </form>
             </div>
