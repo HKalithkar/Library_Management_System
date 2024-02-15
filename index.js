@@ -54,10 +54,16 @@ searchForm.addEventListener("submit", (e)=> {                       //Event List
     let searchValue = document.querySelector("#search-box").value;  //Value of search input
     defaultHTML();
     let length = book_list.length;
+    let found = 0;
     for(let i=0; i<length; i++) {
         if(book_list[i].title == searchValue) {
             mainContainer.appendChild(createBookDiv(book_list[i]));
+            found++;
         }
+    }
+    if(found == 0) {
+        alert("Sorry, Searched Book Not Found");
+        displayBooks();
     }
 })
 
