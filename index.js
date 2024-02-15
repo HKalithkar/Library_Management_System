@@ -22,9 +22,9 @@ function createBookDiv(book) {                              //Creating Book divi
 
 let mainContainer = document.querySelector(".main-container");  //Container holding all Books
 let viewAllButton = document.querySelector(".view-all button"); //View all Button
-let search = document.querySelector(".search form");            //Search form
-let addbook = document.querySelector(".add-book form");         //Add book form
-let add = document.querySelectorAll(".add input");              //For Title, Author, Pages and Genre details
+let searchForm = document.querySelector(".search form");            //Search form
+let addBookForm = document.querySelector(".add-book form");         //Add book form
+let addInputs = document.querySelectorAll(".add input");              //For Title, Author, Pages and Genre details
 
 function defaultHTML() {                                        //To avoid redundancies
     mainContainer.innerHTML = `
@@ -49,7 +49,7 @@ viewAllButton.addEventListener("click", ()=> {
     displayBooks();
 })
 
-search.addEventListener("submit", (e)=> {                       //Event Listener to display specific book asked by user
+searchForm.addEventListener("submit", (e)=> {                       //Event Listener to display specific book asked by user
     e.preventDefault();     //To prevent default submission of input type submit
     let searchValue = document.querySelector("#search-box").value;  //Value of search input
     defaultHTML();
@@ -57,18 +57,17 @@ search.addEventListener("submit", (e)=> {                       //Event Listener
     for(let i=0; i<length; i++) {
         if(book_list[i].title == searchValue) {
             mainContainer.appendChild(createBookDiv(book_list[i]));
-            break;
         }
     }
 })
 
-addbook.addEventListener("submit", (e)=> {                  //Adding book
+addBookForm.addEventListener("submit", (e)=> {                  //Adding book
     e.preventDefault();
-    let newBook = new Book(++count, add[0].value, add[1].value, add[2].value, add[3].value);
+    let newBook = new Book(++count, addInputs[0].value, addInputs[1].value, addInputs[2].value, addInputs[3].value);
     book_list.push(newBook);
     defaultHTML();
     displayBooks();
     for(let i=0; i<4; i++) {            //To empty Inputs in add book form after submit
-        add[i].value = "";
+        addInputs[i].value = "";
     }
 })
